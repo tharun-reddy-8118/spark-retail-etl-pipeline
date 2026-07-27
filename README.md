@@ -156,8 +156,14 @@ POSTGRES_CONFIG = {
 ```
 *Note: The required PostgreSQL JDBC driver (`postgresql-42.7.12.jar`) is bundled directly inside `/drivers`. The pipeline automatically mounts this driver to the Spark classpath.*
 
-### 3. Source Datasets
-Verify that your raw input datasets (`customers.csv`, `orders.csv`, `products.csv`, etc.) are located within the `data/raw/` directory.
+### 3. Generate Source Datasets
+To keep this Git repository lightweight, raw transactional dataset files (`*.csv`) are excluded from version control via `.gitignore`. 
+
+To generate the required enterprise operational datasets (`customers.csv`, `orders.csv`, `products.csv`, `inventory.csv`, etc.), clone and execute the dedicated **Retail Data Generator** repository:
+```bash
+git clone https://github.com/tharun-reddy-8118/retail-data-generator.git
+```
+Follow the setup instructions in that repository, and place the generated `.csv` dataset files directly into the `data/raw/` directory of this pipeline project.
 
 ---
 
