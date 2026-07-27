@@ -11,8 +11,10 @@ hs_err_pid*.log
 replay_pid*.log
 
 # Runtime data and output folders (prevent staging huge CSV/Parquet files)
+data/raw/*
 data/processed/*
 data/staging/*
+!data/raw/.gitkeep
 !data/processed/.gitkeep
 !data/staging/.gitkeep
 output/*
